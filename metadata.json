@@ -1,0 +1,6 @@
+{
+  "name": "PowerZone Fitness Studio",
+  "description": "Premier fitness studio in Baner, Balewadi, Aundh & Pashan. Book free trial, explore training programs, transformation wall, member reviews, interactive BMI calculator & direct WhatsApp booking to 918329931123.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

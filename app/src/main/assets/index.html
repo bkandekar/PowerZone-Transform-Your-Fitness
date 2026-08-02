@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerZone Fitness Studio | Baner & Pune Premier Gym</title>
+  <meta name="description" content="PowerZone Fitness Studio Baner - Premier strength training, cardio, CrossFit, Zumba, Yoga, and 1-on-1 personal training in Baner Pune. Book your 3-Day Free Trial Pass today!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="brand-text">POWERZONE <small>BANER</small></span>
+      </a>
+      <nav class="nav-links" id="navMenu">
+        <a href="#about">Why Us</a>
+        <a href="#timetable">Timetable</a>
+        <a href="#programs">Programs</a>
+        <a href="#transformations">Results</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#calculator">BMI Calculator</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline" id="btnReferral">🎁 Refer & Win</button>
+        <button class="btn btn-primary" id="btnBookTrialNav">Get 3-Day Free Trial</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="badge-tag">🔥 BANER'S #1 PREMIER FITNESS STUDIO</div>
+      <h1>TRANSFORM YOUR BODY & MIND AT POWERZONE</h1>
+      <p class="hero-subtext">
+        5000+ sq.ft Heavy Strength Floor, Certified ACE Coaches, Exclusive Ladies Batches & Steam Bath Amenities in Baner, Pune.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn btn-xl btn-primary" id="btnHeroTrial">⚡ Claim 3-Day Free Trial Pass</button>
+        <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner,%20I%20want%20to%20inquire%20about%20gym%20membership" target="_blank" class="btn btn-xl btn-whatsapp">
+          💬 Chat on WhatsApp (+91 83299 31123)
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">4.9 ★</span>
+          <span class="stat-label">500+ Google Reviews</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">2,500+</span>
+          <span class="stat-label">Active Members</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Certified ACE/K11 Trainers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Timetable Section -->
+  <section class="section" id="timetable">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">LIVE CLASS SCHEDULE</span>
+        <h2>WEEKLY GROUP BATCHES & LADIES SLOTS</h2>
+        <p>Reserve your slot for Zumba, Power Yoga, Crossfit, and HIIT batches with certified fitness lead coaches.</p>
+      </div>
+
+      <div class="timetable-controls">
+        <button class="tab-btn active" data-day="Mon-Wed-Fri">Mon / Wed / Fri</button>
+        <button class="tab-btn" data-day="Tue-Thu-Sat">Tue / Thu / Sat</button>
+        <button class="tab-btn" data-day="Sunday">Sunday Masterclass</button>
+      </div>
+
+      <div class="timetable-grid" id="timetableGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive BMI Calculator -->
+  <section class="section section-dark" id="calculator">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">HEALTH METRICS TOOL</span>
+        <h2>INTERACTIVE BMI & CALORIE CALCULATOR</h2>
+        <p>Get personalized daily protein and weight targets customized for Baner / Pune fitness enthusiasts.</p>
+      </div>
+
+      <div class="bmi-card">
+        <div class="bmi-form">
+          <div class="form-group">
+            <label for="bmiHeight">Height (cm)</label>
+            <input type="number" id="bmiHeight" placeholder="e.g. 175" value="175">
+          </div>
+          <div class="form-group">
+            <label for="bmiWeight">Weight (kg)</label>
+            <input type="number" id="bmiWeight" placeholder="e.g. 70" value="70">
+          </div>
+          <div class="form-group">
+            <label for="bmiGoal">Primary Goal</label>
+            <select id="bmiGoal">
+              <option value="Fat Loss & Toning">Fat Loss & Toning</option>
+              <option value="Muscle Hypertrophy">Muscle Hypertrophy & Strength</option>
+              <option value="General Fitness & Energy">General Fitness & Endurance</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-block" id="btnCalculateBmi">Calculate My BMI & Macros</button>
+        </div>
+
+        <div class="bmi-result-panel" id="bmiResultPanel">
+          <div class="bmi-gauge">
+            <div class="gauge-value" id="bmiValue">22.9</div>
+            <div class="gauge-status" id="bmiStatus">Normal Weight</div>
+          </div>
+          <div class="bmi-details">
+            <p><strong>Recommended Target:</strong> Maintain lean mass & progressive resistance overload.</p>
+            <p><strong>Daily Protein Target:</strong> <span id="proteinTarget">126g - 140g</span> / day</p>
+            <button class="btn btn-outline btn-block" id="btnBmiWhatsApp">Get Custom Diet Chart on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Offered -->
+  <section class="section" id="programs">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">OUR SPECIALTIES</span>
+        <h2>TRAINING PROGRAMS BUILT FOR RESULTS</h2>
+        <p>From heavy barbell lifting to specialized female fitness batches, choose the path that fits your goals.</p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-badge">Popular</div>
+          <div class="program-icon">🏋️‍♂️</div>
+          <h3>Strength & Heavy Hypertrophy</h3>
+          <p>5 Squat racks, bumper plates up to 250kg, and isolateral lever machines for max muscle gain.</p>
+          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Strength Hypertrophy">Book Trial</button>
+        </div>
+
+        <div class="program-card">
+          <div class="program-badge ladies">Exclusive</div>
+          <div class="program-icon">🧘‍♀️</div>
+          <h3>Ladies Exclusive Batches</h3>
+          <p>Dedicated female-only slots with full privacy and female ACE certified specialists (Mon-Sat 11 AM & 4 PM).</p>
+          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Ladies Exclusive">Book Trial</button>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon">⚡</div>
+          <h3>CrossFit & Functional HIIT</h3>
+          <p>Battle ropes, plyo boxes, sled pushes, kettlebells, and high-energy endurance circuits.</p>
+          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Crossfit & HIIT">Book Trial</button>
+        </div>
+
+        <div class="program-card">
+          <div class="program-icon">🎯</div>
+          <h3>1-on-1 Transformation Coaching</h3>
+          <p>Dedicated personal coach, bi-weekly InBody body fat scans, and customized Indian diet plans.</p>
+          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Personal Training">Book Trial</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformation Wall -->
+  <section class="section section-dark" id="transformations">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">REAL BANER MEMBERS</span>
+        <h2>BEFORE & AFTER TRANSFORMATION WALL</h2>
+        <p>See real results achieved by software engineers, working moms, and students right here in Baner.</p>
+      </div>
+
+      <div class="transformations-grid">
+        <div class="transformation-card">
+          <div class="transformation-header">
+            <h3>Aakash Deshmukh</h3>
+            <span class="time-badge">4 Months Result</span>
+          </div>
+          <div class="transformation-metrics">
+            <div class="metric">
+              <span class="label">Weight Lost</span>
+              <span class="valueHighlight">-16.5 kg</span>
+            </div>
+            <div class="metric">
+              <span class="label">Body Fat</span>
+              <span class="value">28% ➔ 15%</span>
+            </div>
+          </div>
+          <p class="transformation-quote">"As an IT engineer at Cummins Baner, long hours gave me severe lower back pain. PowerZone's trainers corrected my posture and guided my diet!"</p>
+        </div>
+
+        <div class="transformation-card">
+          <div class="transformation-header">
+            <h3>Pooja Kulkarni</h3>
+            <span class="time-badge">3 Months Result</span>
+          </div>
+          <div class="transformation-metrics">
+            <div class="metric">
+              <span class="label">Inch Loss</span>
+              <span class="valueHighlight">-5 Inches Waist</span>
+            </div>
+            <div class="metric">
+              <span class="label">Strength</span>
+              <span class="value">30kg Squat</span>
+            </div>
+          </div>
+          <p class="transformation-quote">"The exclusive ladies batch at 11 AM gave me full confidence and privacy. Coach Priya made workout sessions high energy!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section class="section" id="pricing">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">TRANSPARENT PRICING</span>
+        <h2>MEMBERSHIP PLANS WITH FREEZE PRIVILEGE</h2>
+        <p>No hidden setup fees. Includes full access to gym floor, group classes & steam bath.</p>
+      </div>
+
+      <div class="pricing-toggle-container">
+        <span>Quarterly Plan</span>
+        <label class="switch">
+          <input type="checkbox" id="pricingToggle">
+          <span class="slider round"></span>
+        </label>
+        <span>Annual VIP Plan <small class="save-tag">SAVE 35%</small></span>
+      </div>
+
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="plan-type">REGULAR PLAN</div>
+          <div class="price" id="priceQuarterly">₹ 6,499 <span>/ 3 Months</span></div>
+          <ul class="plan-features">
+            <li>✓ Unlimited Gym Floor & Cardio Access</li>
+            <li>✓ Free 1-on-1 Fitness Assessment</li>
+            <li>✓ Group Zumba & Yoga Batches</li>
+            <li>✓ 14 Days Free Membership Freeze</li>
+          </ul>
+          <button class="btn btn-primary btn-block btn-select-plan" data-plan="Quarterly Regular">Choose Quarterly Plan</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="popular-ribbon">BEST VALUE</div>
+          <div class="plan-type">ANNUAL VIP ELITE</div>
+          <div class="price" id="priceYearly">₹ 14,999 <span>/ 12 Months</span></div>
+          <ul class="plan-features">
+            <li>✓ Unlimited Access All Days (6 AM - 10 PM)</li>
+            <li>✓ Complimentary Personalized Nutrition Chart</li>
+            <li>✓ 45 Days Free Membership Freeze Privilege</li>
+            <li>✓ 2 Free Personal Training Sessions</li>
+            <li>✓ Free Steam Bath Access</li>
+          </ul>
+          <button class="btn btn-primary btn-block btn-select-plan" data-plan="Annual VIP Elite">Choose Annual VIP Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section section-dark" id="faq">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">GOT QUESTIONS?</span>
+        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <div class="faq-question">
+            <span>How does the 3-Day Free Trial Pass work?</span>
+            <span class="faq-icon">−</span>
+          </div>
+          <div class="faq-answer">
+            Your 3-day trial grants 100% free access to our gym floor, strength equipment, and 1 group class. Simply show your confirmation code on WhatsApp at our reception in Baner!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I freeze or pause my membership if I travel?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! Annual VIP members can freeze their membership for up to 45 days. Quarterly members can freeze for up to 14 days with zero penalty.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are there dedicated Women-Only batches at PowerZone?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! We run exclusive Ladies Batches Mon-Sat from 11:00 AM to 12:00 PM and 4:00 PM to 5:00 PM with female ACE certified coach Priya Kulkarni.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>⚡ POWERZONE FITNESS</h3>
+        <p>Baner - Balewadi Link Road, Opposite Westend Mall Road, Baner, Pune - 411045.</p>
+        <p><strong>Phone / WhatsApp:</strong> +91 83299 31123</p>
+        <p><strong>Hours:</strong> Mon - Sat: 6:00 AM - 10:00 PM | Sun: 7:00 AM - 1:00 PM</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">Why PowerZone</a></li>
+          <li><a href="#timetable">Class Timetable</a></li>
+          <li><a href="#programs">Training Programs</a></li>
+          <li><a href="#calculator">BMI Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Direct Contact</h4>
+        <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner" target="_blank" class="btn btn-whatsapp btn-sm">💬 WhatsApp Us Now</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PowerZone Fitness Studio Baner Pune. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Chat Bubble -->
+  <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner,%20I%20want%20to%20book%20a%203-Day%20Free%20Trial%20Pass" target="_blank" class="floating-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Booking Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <h2>⚡ Claim 3-Day Free Trial Pass</h2>
+      <p>Enter your details below to get instant WhatsApp pass code & location pin.</p>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="memberName">Full Name</label>
+          <input type="text" id="memberName" required placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label for="memberPhone">WhatsApp Mobile Number</label>
+          <input type="tel" id="memberPhone" required placeholder="e.g. 9823012345">
+        </div>
+        <div class="form-group">
+          <label for="memberLocality">Your Area / Locality</label>
+          <select id="memberLocality">
+            <option value="Baner">Baner</option>
+            <option value="Balewadi">Balewadi</option>
+            <option value="Aundh">Aundh</option>
+            <option value="Pashan">Pashan</option>
+            <option value="Other Pune Area">Other Pune Area</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Confirm & Open WhatsApp Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Referral Modal -->
+  <div class="modal" id="referralModal">
+    <div class="modal-content">
+      <span class="modal-close" id="refModalClose">&times;</span>
+      <h2>🎁 Refer a Friend & Win 1 Month Free</h2>
+      <p>Give your friends 10% off their membership & get 1 Month FREE for every referral!</p>
+      <div class="referral-box">
+        <p>YOUR REFERRAL CODE:</p>
+        <div class="code-display" id="refCodeDisplay">POWER-VIP-BANER</div>
+      </div>
+      <button class="btn btn-whatsapp btn-block" id="btnShareReferral">Share Invite Code on WhatsApp</button>
+    </div>
+  </div>
+
+</body>
+</html>

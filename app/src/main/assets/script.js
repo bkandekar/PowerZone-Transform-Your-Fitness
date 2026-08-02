@@ -1,0 +1,211 @@
+/* ==========================================================================
+   POWERZONE FITNESS STUDIO - SEPARATE JAVASCRIPT (script.js)
+   ========================================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Timetable Data
+  const timetableData = {
+    "Mon-Wed-Fri": [
+      { time: "06:30 AM - 07:30 AM", title: "Sunrise Strength & Hypertrophy", trainer: "Rahul Sharma (ACE Lead)", slots: "4 Seats Left" },
+      { time: "08:30 AM - 09:30 AM", title: "CrossFit HIIT & Fat Loss Circuit", trainer: "Vikram Patil", slots: "6 Seats Left" },
+      { time: "11:00 AM - 12:00 PM", title: "Exclusive Ladies Fitness & Toning", trainer: "Priya Kulkarni", slots: "3 Seats Left" },
+      { time: "06:00 PM - 07:00 PM", title: "Heavy Barbell & Powerlifting Deck", trainer: "Amit Deshmukh", slots: "2 Seats Left" },
+      { time: "07:30 PM - 08:30 PM", title: "Zumba Dance Fitness Beat Party", trainer: "Neha Verma", slots: "5 Seats Left" }
+    ],
+    "Tue-Thu-Sat": [
+      { time: "07:00 AM - 08:00 AM", title: "Power Vinyasa Yoga & Core Conditioning", trainer: "Ananya Joshi", slots: "5 Seats Left" },
+      { time: "09:00 AM - 10:00 AM", title: "Kettlebell & Functional Mobility", trainer: "Rahul Sharma", slots: "4 Seats Left" },
+      { time: "04:00 PM - 05:00 PM", title: "Ladies Exclusive Weight Loss Batch", trainer: "Priya Kulkarni", slots: "2 Seats Left" },
+      { time: "07:00 PM - 08:00 PM", title: "Extreme Fat Loss Calisthenics", trainer: "Vikram Patil", slots: "6 Seats Left" }
+    ],
+    "Sunday": [
+      { time: "08:00 AM - 09:30 AM", title: "Sunday Olympic Deadlift & Squat Clinic", trainer: "Master Coach Rahul", slots: "Only 8 Seats" },
+      { time: "10:00 AM - 11:30 AM", title: "Sound Bath & Recovery Yoga Session", trainer: "Ananya Joshi", slots: "10 Seats" }
+    ]
+  };
+
+  // Render Timetable Grid
+  const timetableGrid = document.getElementById("timetableGrid");
+  const tabButtons = document.querySelectorAll(".tab-btn");
+
+  function renderTimetable(dayCategory) {
+    if (!timetableGrid) return;
+    timetableGrid.innerHTML = "";
+    const slots = timetableData[dayCategory] || [];
+
+    slots.forEach(slot => {
+      const card = document.createElement("div");
+      card.className = "slot-card";
+      card.innerHTML = `
+        <div>
+          <div class="slot-time">${slot.time}</div>
+          <div class="slot-title">${slot.title}</div>
+          <div class="slot-trainer">🎙️ Coach: ${slot.trainer} • <span style="color:#CCFF00">${slot.slots}</span></div>
+        </div>
+        <button class="btn btn-sm btn-outline btn-reserve-slot" data-slot="${slot.title} (${slot.time})">Reserve Seat on WhatsApp</button>
+      `;
+      timetableGrid.appendChild(card);
+    });
+
+    // Add event listener to reserve buttons
+    document.querySelectorAll(".btn-reserve-slot").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const slotInfo = e.target.getAttribute("data-slot");
+        openWhatsAppMessage(`Hi PowerZone Baner! I want to reserve a seat for the batch: ${slotInfo}`);
+      });
+    });
+  }
+
+  // Initial render
+  renderTimetable("Mon-Wed-Fri");
+
+  // Tab switcher
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const day = btn.getAttribute("data-day");
+      renderTimetable(day);
+    });
+  });
+
+  // Interactive BMI Calculator Logic
+  const btnCalculateBmi = document.getElementById("btnCalculateBmi");
+  const bmiHeight = document.getElementById("bmiHeight");
+  const bmiWeight = document.getElementById("bmiWeight");
+  const bmiValue = document.getElementById("bmiValue");
+  const bmiStatus = document.getElementById("bmiStatus");
+  const proteinTarget = document.getElementById("proteinTarget");
+  const btnBmiWhatsApp = document.getElementById("btnBmiWhatsApp");
+
+  if (btnCalculateBmi) {
+    btnCalculateBmi.addEventListener("click", () => {
+      const h = parseFloat(bmiHeight.value) / 100;
+      const w = parseFloat(bmiWeight.value);
+
+      if (h > 0 && w > 0) {
+        const bmi = (w / (h * h)).toFixed(1);
+        bmiValue.innerText = bmi;
+
+        let statusText = "Normal Weight";
+        if (bmi < 18.5) statusText = "Underweight";
+        else if (bmi >= 25 && bmi < 29.9) statusText = "Overweight";
+        else if (bmi >= 30) statusText = "Obese Range";
+
+        bmiStatus.innerText = statusText;
+
+        const minProtein = Math.round(w * 1.6);
+        const maxProtein = Math.round(w * 2.2);
+        proteinTarget.innerText = `${minProtein}g - ${maxProtein}g / day`;
+      }
+    });
+  }
+
+  if (btnBmiWhatsApp) {
+    btnBmiWhatsApp.addEventListener("click", () => {
+      const h = bmiHeight.value;
+      const w = bmiWeight.value;
+      const bmi = bmiValue.innerText;
+      openWhatsAppMessage(`Hi PowerZone Baner! My Height is ${h}cm, Weight is ${w}kg, BMI is ${bmi}. Please share a custom Indian Diet Chart & Training Routine for Baner.`);
+    });
+  }
+
+  // FAQ Accordion Toggle
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    question.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+      faqItems.forEach(i => i.classList.remove("open"));
+      if (!isOpen) {
+        item.classList.add("open");
+      }
+    });
+  });
+
+  // Pricing Toggle Logic
+  const pricingToggle = document.getElementById("pricingToggle");
+  const priceQuarterly = document.getElementById("priceQuarterly");
+  const priceYearly = document.getElementById("priceYearly");
+
+  if (pricingToggle) {
+    pricingToggle.addEventListener("change", () => {
+      if (pricingToggle.checked) {
+        priceQuarterly.innerHTML = "₹ 5,999 <span>/ 3 Months (Annual Rate)</span>";
+        priceYearly.innerHTML = "₹ 14,999 <span>/ 12 Months (Save 35%)</span>";
+      } else {
+        priceQuarterly.innerHTML = "₹ 6,499 <span>/ 3 Months</span>";
+        priceYearly.innerHTML = "₹ 14,999 <span>/ 12 Months</span>";
+      }
+    });
+  }
+
+  // Modal Handles
+  const bookingModal = document.getElementById("bookingModal");
+  const referralModal = document.getElementById("referralModal");
+  const modalClose = document.getElementById("modalClose");
+  const refModalClose = document.getElementById("refModalClose");
+
+  const btnHeroTrial = document.getElementById("btnHeroTrial");
+  const btnBookTrialNav = document.getElementById("btnBookTrialNav");
+  const btnReferral = document.getElementById("btnReferral");
+
+  function openModal(modal) {
+    if (modal) modal.classList.add("active");
+  }
+
+  function closeModal(modal) {
+    if (modal) modal.classList.remove("active");
+  }
+
+  if (btnHeroTrial) btnHeroTrial.addEventListener("click", () => openModal(bookingModal));
+  if (btnBookTrialNav) btnBookTrialNav.addEventListener("click", () => openModal(bookingModal));
+  if (btnReferral) btnReferral.addEventListener("click", () => openModal(referralModal));
+
+  if (modalClose) modalClose.addEventListener("click", () => closeModal(bookingModal));
+  if (refModalClose) refModalClose.addEventListener("click", () => closeModal(referralModal));
+
+  // Program Inquiry Buttons
+  document.querySelectorAll(".btn-program-inquire").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const programName = e.target.getAttribute("data-program");
+      openWhatsAppMessage(`Hi PowerZone Baner! I want to inquire and book a 3-Day Free Trial for the ${programName} program.`);
+    });
+  });
+
+  // Membership Plan Selection Buttons
+  document.querySelectorAll(".btn-select-plan").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const planName = e.target.getAttribute("data-plan");
+      openWhatsAppMessage(`Hi PowerZone Baner! I am interested in joining the ${planName} membership plan.`);
+    });
+  });
+
+  // Booking Form Submit
+  const bookingForm = document.getElementById("bookingForm");
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("memberName").value;
+      const phone = document.getElementById("memberPhone").value;
+      const locality = document.getElementById("memberLocality").value;
+
+      closeModal(bookingModal);
+      openWhatsAppMessage(`Hi PowerZone Baner! My name is ${name} (${phone}) from ${locality}. Please activate my 3-Day Free Trial Pass & send location pin!`);
+    });
+  }
+
+  // Share Referral Button
+  const btnShareReferral = document.getElementById("btnShareReferral");
+  if (btnShareReferral) {
+    btnShareReferral.addEventListener("click", () => {
+      openWhatsAppMessage("🏋️ Hey! Join me at PowerZone Fitness Studio in Baner Pune! Use my code *POWER-VIP-BANER* for a 3-Day FREE Trial Pass + 10% off membership!");
+    });
+  }
+
+  // WhatsApp Helper Function
+  function openWhatsAppMessage(text) {
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/918329931123?text=${encodedText}`, "_blank");
+  }
+});
