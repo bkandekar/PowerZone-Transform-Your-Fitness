@@ -29,11 +29,15 @@
         <a href="#amenities">Amenities</a>
         <a href="#pricing">Pricing</a>
         <a href="#calculator">BMI Calculator</a>
+        <a href="#instagram">Instagram</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
         <button class="btn btn-outline" id="btnReferral">🎁 Refer & Win</button>
         <button class="btn btn-primary" id="btnBookTrialNav">Get 3-Day Free Trial</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -49,10 +53,10 @@
       </p>
 
       <div class="hero-cta-group">
-        <button class="btn btn-xl btn-primary" id="btnHeroTrial">⚡ Claim 3-Day Free Trial Pass</button>
-        <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner,%20I%20want%20to%20inquire%20about%20gym%20membership" target="_blank" class="btn btn-xl btn-whatsapp">
+        <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner,%20I%20want%20to%20inquire%20about%20gym%20membership" target="_blank" rel="noopener" class="btn btn-xl btn-whatsapp">
           💬 Chat on WhatsApp (+91 83299 31123)
         </a>
+        <button class="btn btn-xl btn-primary" id="btnHeroTrial">⚡ Book Free Trial</button>
       </div>
 
       <div class="hero-stats">
@@ -74,23 +78,55 @@
     </div>
 
     <div class="hero-image-wrap">
-      <img src="images/hero-banner5.webp" alt="PowerZone Fitness Studio Baner gym floor" class="hero-image">
+      <img src="images/hero-banner5.webp" alt="PowerZone Fitness Studio Baner gym floor" class="hero-image" onerror="this.style.display='none'">
     </div>
   </section>
 
-  <!-- Google Reviews / Testimonials Section -->
-  <section class="section" id="reviews">
+  <!-- About / Why Us Section -->
+  <section class="section" id="about">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">WHY POWERZONE BANER</span>
+        <h2>THE MOST EQUIPPED FITNESS STUDIO IN BANER</h2>
+        <p>Built for serious results — heavy strength floor, certified coaches, ladies-only batches and recovery amenities under one roof.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🏋️</div>
+          <h3>5000+ Sq.Ft Strength Floor</h3>
+          <p>5 squat racks, bumper plates up to 250 kg and isolateral machines for serious hypertrophy & powerlifting.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">👩‍🏫</div>
+          <h3>ACE & K11 Certified Coaches</h3>
+          <p>Every session is guided by certified trainers who correct form, plan progressive overload and track your results.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🌸</div>
+          <h3>Ladies Exclusive Batches</h3>
+          <p>Dedicated female-only slots with full privacy and female ACE certified coaches (Mon–Sat 11 AM & 4 PM).</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">♨️</div>
+          <h3>Steam Bath & Recovery</h3>
+          <p>Hygienic steam bath and recovery lounge included free with Annual VIP membership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Reviews -->
+  <section class="section section-dark" id="reviews">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">VERIFIED GOOGLE RATINGS</span>
         <h2>RATED 4.9/5 BY 500+ MEMBERS IN BANER</h2>
         <p>Real feedback from real PowerZone members across Baner, Balewadi, Aundh and Pashan.</p>
       </div>
-
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-header">
-            <img src="images/reviewer-sanjay.webp" alt="Sanjay Kale" class="reviewer-avatar">
+            <img src="images/reviewer-sanjay.webp" alt="Sanjay Kale" class="reviewer-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Sanjay+Kale&background=CCFF00&color=000'">
             <div class="review-header-text">
               <h4>Sanjay Kale</h4>
               <div class="review-stars">★★★★★</div>
@@ -98,10 +134,9 @@
           </div>
           <p class="review-comment">"Best strength floor in Baner, hands down. Coach Rahul's form corrections helped me avoid injury and hit new PRs."</p>
         </div>
-
         <div class="review-card">
           <div class="review-header">
-            <img src="images/reviewer-kavita.webp" alt="Kavita Rane" class="reviewer-avatar">
+            <img src="images/reviewer-kavita.webp" alt="Kavita Rane" class="reviewer-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Kavita+Rane&background=CCFF00&color=000'">
             <div class="review-header-text">
               <h4>Kavita Rane</h4>
               <div class="review-stars">★★★★★</div>
@@ -109,10 +144,9 @@
           </div>
           <p class="review-comment">"The Ladies Exclusive batch with Coach Priya is amazing - clean, private, and high energy. Lost 5kg in 2 months!"</p>
         </div>
-
         <div class="review-card">
           <div class="review-header">
-            <img src="images/reviewer-omkar.webp" alt="Omkar Bhosale" class="reviewer-avatar">
+            <img src="images/reviewer-omkar.webp" alt="Omkar Bhosale" class="reviewer-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Omkar+Bhosale&background=CCFF00&color=000'">
             <div class="review-header-text">
               <h4>Omkar Bhosale</h4>
               <div class="review-stars">★★★★★</div>
@@ -120,10 +154,9 @@
           </div>
           <p class="review-comment">"Great equipment, clean steam bath, and genuinely helpful trainers. Best value gym membership in Baner Pune."</p>
         </div>
-
         <div class="review-card">
           <div class="review-header">
-            <img src="images/reviewer-shraddha.webp" alt="Shraddha Joshi" class="reviewer-avatar">
+            <img src="images/reviewer-shraddha.webp" alt="Shraddha Joshi" class="reviewer-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Shraddha+Joshi&background=CCFF00&color=000'">
             <div class="review-header-text">
               <h4>Shraddha Joshi</h4>
               <div class="review-stars">★★★★★</div>
@@ -135,60 +168,52 @@
     </div>
   </section>
 
-  <!-- Class Timetable Section -->
-  <section class="section section-dark" id="timetable">
+  <!-- Class Timetable -->
+  <section class="section" id="timetable">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">LIVE CLASS SCHEDULE</span>
         <h2>WEEKLY GROUP BATCHES & LADIES SLOTS</h2>
         <p>Reserve your slot for Zumba, Power Yoga, Crossfit, and HIIT batches with certified fitness lead coaches.</p>
       </div>
-
       <div class="timetable-controls">
         <button class="tab-btn active" data-day="Mon-Wed-Fri">Mon / Wed / Fri</button>
         <button class="tab-btn" data-day="Tue-Thu-Sat">Tue / Thu / Sat</button>
         <button class="tab-btn" data-day="Sunday">Sunday Masterclass</button>
       </div>
-
-      <div class="timetable-grid" id="timetableGrid">
-        <!-- Injected via JavaScript -->
-      </div>
+      <div class="timetable-grid" id="timetableGrid"></div>
     </div>
   </section>
 
-  <!-- Trainers Section -->
-  <section class="section" id="trainers">
+  <!-- Trainers -->
+  <section class="section section-dark" id="trainers">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">EXPERT COACHING TEAM</span>
         <h2>CERTIFIED TRAINERS AT POWERZONE BANER</h2>
         <p>ACE & K11 certified coaches who guide every rep, set, and diet decision with precision.</p>
       </div>
-
       <div class="trainers-grid">
         <div class="trainer-card">
-          <img src="images/trainer-rahul.webp" alt="Rahul Sharma" class="trainer-img">
+          <img src="images/trainer-rahul.webp" alt="Rahul Sharma" class="trainer-img" onerror="this.src='https://ui-avatars.com/api/?name=Rahul+Sharma&background=181B22&color=CCFF00&size=220'">
           <h3>Rahul Sharma</h3>
           <div class="trainer-role">Head Strength Coach (ACE Lead)</div>
           <p class="trainer-spec">Heavy Barbell Lifting, Hypertrophy, Powerlifting Form Correction</p>
         </div>
-
         <div class="trainer-card">
-          <img src="images/trainer-priya.webp" alt="Priya Kulkarni" class="trainer-img">
+          <img src="images/trainer-priya.webp" alt="Priya Kulkarni" class="trainer-img" onerror="this.src='https://ui-avatars.com/api/?name=Priya+Kulkarni&background=181B22&color=CCFF00&size=220'">
           <h3>Priya Kulkarni</h3>
           <div class="trainer-role">Ladies Fitness Lead (Female ACE Certified)</div>
           <p class="trainer-spec">Female Toning, Posture Correction, Ladies Exclusive Batches</p>
         </div>
-
         <div class="trainer-card">
-          <img src="images/trainer-vikram.webp" alt="Vikram Patil" class="trainer-img">
+          <img src="images/trainer-vikram.webp" alt="Vikram Patil" class="trainer-img" onerror="this.src='https://ui-avatars.com/api/?name=Vikram+Patil&background=181B22&color=CCFF00&size=220'">
           <h3>Vikram Patil</h3>
           <div class="trainer-role">CrossFit & HIIT Coach</div>
           <p class="trainer-spec">Functional Training, Fat Loss Circuits, Calisthenics</p>
         </div>
-
         <div class="trainer-card">
-          <img src="images/trainer-neha.webp" alt="Neha Verma" class="trainer-img">
+          <img src="images/trainer-neha.webp" alt="Neha Verma" class="trainer-img" onerror="this.src='https://ui-avatars.com/api/?name=Neha+Verma&background=181B22&color=CCFF00&size=220'">
           <h3>Neha Verma</h3>
           <div class="trainer-role">Zumba & Dance Fitness Instructor</div>
           <p class="trainer-spec">High-Energy Dance Cardio, Group Choreography, Beat Party Sessions</p>
@@ -197,24 +222,23 @@
     </div>
   </section>
 
-  <!-- Interactive BMI Calculator -->
-  <section class="section section-dark" id="calculator">
+  <!-- BMI Calculator -->
+  <section class="section" id="calculator">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">HEALTH METRICS TOOL</span>
         <h2>INTERACTIVE BMI & CALORIE CALCULATOR</h2>
         <p>Get personalized daily protein and weight targets customized for Baner / Pune fitness enthusiasts.</p>
       </div>
-
       <div class="bmi-card">
         <div class="bmi-form">
           <div class="form-group">
             <label for="bmiHeight">Height (cm)</label>
-            <input type="number" id="bmiHeight" placeholder="e.g. 175" value="175">
+            <input type="number" id="bmiHeight" placeholder="e.g. 175" value="175" min="100" max="250">
           </div>
           <div class="form-group">
             <label for="bmiWeight">Weight (kg)</label>
-            <input type="number" id="bmiWeight" placeholder="e.g. 70" value="70">
+            <input type="number" id="bmiWeight" placeholder="e.g. 70" value="70" min="30" max="250">
           </div>
           <div class="form-group">
             <label for="bmiGoal">Primary Goal</label>
@@ -224,79 +248,73 @@
               <option value="General Fitness & Energy">General Fitness & Endurance</option>
             </select>
           </div>
-          <button class="btn btn-primary btn-block" id="btnCalculateBmi">Calculate My BMI & Macros</button>
+          <button type="button" class="btn btn-primary btn-block" id="btnCalculateBmi">Calculate My BMI & Macros</button>
         </div>
-
         <div class="bmi-result-panel" id="bmiResultPanel">
           <div class="bmi-gauge">
             <div class="gauge-value" id="bmiValue">22.9</div>
             <div class="gauge-status" id="bmiStatus">Normal Weight</div>
           </div>
           <div class="bmi-details">
-            <p><strong>Recommended Target:</strong> Maintain lean mass & progressive resistance overload.</p>
-            <p><strong>Daily Protein Target:</strong> <span id="proteinTarget">126g - 140g</span> / day</p>
-            <button class="btn btn-outline btn-block" id="btnBmiWhatsApp">Get Custom Diet Chart on WhatsApp</button>
+            <p><strong>Recommended Target:</strong> <span id="bmiRecommendation">Maintain lean mass & progressive resistance overload.</span></p>
+            <p><strong>Daily Protein Target:</strong> <span id="proteinTarget">112g - 154g</span></p>
+            <button type="button" class="btn btn-outline btn-block" id="btnBmiWhatsApp">Get Custom Diet Chart on WhatsApp</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Programs Offered -->
-  <section class="section" id="programs">
+  <!-- Programs -->
+  <section class="section section-dark" id="programs">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">OUR SPECIALTIES</span>
         <h2>TRAINING PROGRAMS BUILT FOR RESULTS</h2>
         <p>From heavy barbell lifting to specialized female fitness batches, choose the path that fits your goals.</p>
       </div>
-
       <div class="programs-grid">
         <div class="program-card">
           <div class="program-badge">Popular</div>
           <div class="program-icon">🏋️‍♂️</div>
           <h3>Strength & Heavy Hypertrophy</h3>
           <p>5 Squat racks, bumper plates up to 250kg, and isolateral lever machines for max muscle gain.</p>
-          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Strength Hypertrophy">Book Trial</button>
+          <button type="button" class="btn btn-sm btn-outline btn-program-inquire" data-program="Strength Hypertrophy">Book Trial</button>
         </div>
-
         <div class="program-card">
           <div class="program-badge ladies">Exclusive</div>
           <div class="program-icon">🧘‍♀️</div>
           <h3>Ladies Exclusive Batches</h3>
           <p>Dedicated female-only slots with full privacy and female ACE certified specialists (Mon-Sat 11 AM & 4 PM).</p>
-          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Ladies Exclusive">Book Trial</button>
+          <button type="button" class="btn btn-sm btn-outline btn-program-inquire" data-program="Ladies Exclusive">Book Trial</button>
         </div>
-
         <div class="program-card">
           <div class="program-icon">⚡</div>
           <h3>CrossFit & Functional HIIT</h3>
           <p>Battle ropes, plyo boxes, sled pushes, kettlebells, and high-energy endurance circuits.</p>
-          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Crossfit & HIIT">Book Trial</button>
+          <button type="button" class="btn btn-sm btn-outline btn-program-inquire" data-program="Crossfit & HIIT">Book Trial</button>
         </div>
-
         <div class="program-card">
           <div class="program-icon">🎯</div>
           <h3>1-on-1 Transformation Coaching</h3>
           <p>Dedicated personal coach, bi-weekly InBody body fat scans, and customized Indian diet plans.</p>
-          <button class="btn btn-sm btn-outline btn-program-inquire" data-program="Personal Training">Book Trial</button>
+          <button type="button" class="btn btn-sm btn-outline btn-program-inquire" data-program="Personal Training">Book Trial</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Transformation Wall -->
-  <section class="section section-dark" id="transformations">
+  <!-- Transformations -->
+  <section class="section" id="transformations">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">REAL BANER MEMBERS</span>
         <h2>BEFORE & AFTER TRANSFORMATION WALL</h2>
         <p>See real results achieved by software engineers, working moms, and students right here in Baner.</p>
       </div>
-
       <div class="transformations-grid">
         <div class="transformation-card">
-          <img src="images/transformation-aakash.webp" alt="Aakash Deshmukh transformation" class="transformation-photo">
+          <img src="images/transformation-aakash.webp" alt="Aakash Deshmukh transformation" class="transformation-photo" onerror="this.style.background='#181B22';this.style.height='200px'">
           <div class="transformation-header">
             <h3>Aakash Deshmukh</h3>
             <span class="time-badge">4 Months Result</span>
@@ -313,9 +331,8 @@
           </div>
           <p class="transformation-quote">"As an IT engineer at Cummins Baner, long hours gave me severe lower back pain. PowerZone's trainers corrected my posture and guided my diet!"</p>
         </div>
-
         <div class="transformation-card">
-          <img src="images/transformation-pooja.webp" alt="Pooja Kulkarni transformation" class="transformation-photo">
+          <img src="images/transformation-pooja.webp" alt="Pooja Kulkarni transformation" class="transformation-photo" onerror="this.style.background='#181B22';this.style.height='200px'">
           <div class="transformation-header">
             <h3>Pooja Kulkarni</h3>
             <span class="time-badge">3 Months Result</span>
@@ -336,36 +353,32 @@
     </div>
   </section>
 
-  <!-- Amenities / Facility Showcase -->
-  <section class="section" id="amenities">
+  <!-- Amenities -->
+  <section class="section section-dark" id="amenities">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">PREMIUM INFRASTRUCTURE</span>
         <h2>5,000+ SQ.FT GYM AMENITIES IN BANER</h2>
         <p>Fully air-conditioned, sanitized daily, and equipped with Olympic-grade strength machines.</p>
       </div>
-
       <div class="amenities-grid">
         <div class="amenity-card">
-          <img src="images/amenity-strength-floor.webp" alt="Heavy Strength Floor" class="amenity-img">
+          <img src="images/amenity-strength-floor.webp" alt="Heavy Strength Floor" class="amenity-img" onerror="this.style.background='#181B22';this.style.height='160px'">
           <h3>Heavy Strength Floor</h3>
           <p>5 squat racks, bumper plates up to 250kg, and isolateral lever machines across 5,000+ sq.ft.</p>
         </div>
-
         <div class="amenity-card">
-          <img src="images/amenity-ladies-studio.webp" alt="Ladies Exclusive Studio" class="amenity-img">
+          <img src="images/amenity-ladies-studio.webp" alt="Ladies Exclusive Studio" class="amenity-img" onerror="this.style.background='#181B22';this.style.height='160px'">
           <h3>Ladies Exclusive Studio</h3>
           <p>Private studio space with female ACE certified coaches for comfortable, judgment-free workouts.</p>
         </div>
-
         <div class="amenity-card">
-          <img src="images/amenity-steam-bath.webp" alt="Steam Bath & Recovery Lounge" class="amenity-img">
+          <img src="images/amenity-steam-bath.webp" alt="Steam Bath & Recovery Lounge" class="amenity-img" onerror="this.style.background='#181B22';this.style.height='160px'">
           <h3>Steam Bath & Recovery Lounge</h3>
           <p>Hygienic steam bath and relaxation lounge included free with Annual VIP membership.</p>
         </div>
-
         <div class="amenity-card">
-          <img src="images/amenity-crossfit-zone.webp" alt="CrossFit Functional Zone" class="amenity-img">
+          <img src="images/amenity-crossfit-zone.webp" alt="CrossFit Functional Zone" class="amenity-img" onerror="this.style.background='#181B22';this.style.height='160px'">
           <h3>CrossFit Functional Zone</h3>
           <p>Battle ropes, plyo boxes, sled pushes, and kettlebells for high-energy functional training.</p>
         </div>
@@ -373,26 +386,24 @@
     </div>
   </section>
 
-  <!-- Pricing Plans Section -->
-  <section class="section section-dark" id="pricing">
+  <!-- Pricing -->
+  <section class="section" id="pricing">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">TRANSPARENT PRICING</span>
         <h2>MEMBERSHIP PLANS WITH FREEZE PRIVILEGE</h2>
         <p>No hidden setup fees. Includes full access to gym floor, group classes & steam bath.</p>
       </div>
-
       <div class="pricing-toggle-container">
-        <span>Quarterly Plan</span>
+        <span class="toggle-label" id="labelQuarterly">Quarterly Plan</span>
         <label class="switch">
           <input type="checkbox" id="pricingToggle">
           <span class="slider round"></span>
         </label>
-        <span>Annual VIP Plan <small class="save-tag">SAVE 35%</small></span>
+        <span class="toggle-label" id="labelAnnual">Annual VIP Plan <small class="save-tag">SAVE 35%</small></span>
       </div>
-
       <div class="pricing-cards">
-        <div class="pricing-card">
+        <div class="pricing-card" id="cardQuarterly">
           <div class="plan-type">REGULAR PLAN</div>
           <div class="price" id="priceQuarterly">₹ 6,499 <span>/ 3 Months</span></div>
           <ul class="plan-features">
@@ -401,10 +412,9 @@
             <li>✓ Group Zumba & Yoga Batches</li>
             <li>✓ 14 Days Free Membership Freeze</li>
           </ul>
-          <button class="btn btn-primary btn-block btn-select-plan" data-plan="Quarterly Regular">Choose Quarterly Plan</button>
+          <button type="button" class="btn btn-primary btn-block btn-select-plan" data-plan="Quarterly Regular">Choose Quarterly Plan</button>
         </div>
-
-        <div class="pricing-card featured">
+        <div class="pricing-card featured" id="cardAnnual">
           <div class="popular-ribbon">BEST VALUE</div>
           <div class="plan-type">ANNUAL VIP ELITE</div>
           <div class="price" id="priceYearly">₹ 14,999 <span>/ 12 Months</span></div>
@@ -415,55 +425,87 @@
             <li>✓ 2 Free Personal Training Sessions</li>
             <li>✓ Free Steam Bath Access</li>
           </ul>
-          <button class="btn btn-primary btn-block btn-select-plan" data-plan="Annual VIP Elite">Choose Annual VIP Plan</button>
+          <button type="button" class="btn btn-primary btn-block btn-select-plan" data-plan="Annual VIP Elite">Choose Annual VIP Plan</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Accordion -->
+  <!-- Instagram Feed -->
+  <section class="section section-dark" id="instagram">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">FOLLOW THE ENERGY</span>
+        <h2>INSTAGRAM @POWERZONE.BANER</h2>
+        <p>Real workouts, member transformations, ladies batches & gym vibes from Baner — follow us for daily motivation.</p>
+      </div>
+      <div class="instagram-grid">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="insta-card">
+          <div class="insta-placeholder"><span class="insta-icon">📸</span><span class="insta-label">Strength Floor</span></div>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="insta-card">
+          <div class="insta-placeholder"><span class="insta-icon">💪</span><span class="insta-label">PR Session</span></div>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="insta-card">
+          <div class="insta-placeholder"><span class="insta-icon">👩‍🦰</span><span class="insta-label">Ladies Batch</span></div>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="insta-card">
+          <div class="insta-placeholder"><span class="insta-icon">⚡</span><span class="insta-label">HIIT Circuit</span></div>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="insta-card">
+          <div class="insta-placeholder"><span class="insta-icon">🏆</span><span class="insta-label">Transformation</span></div>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="insta-card">
+          <div class="insta-placeholder"><span class="insta-icon">♨️</span><span class="insta-label">Steam & Recover</span></div>
+        </a>
+      </div>
+      <div class="instagram-cta">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-primary btn-xl">📸 Follow @powerzone.baner on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="section" id="faq">
     <div class="section-container">
       <div class="section-header text-center">
         <span class="section-subtitle">GOT QUESTIONS?</span>
         <h2>FREQUENTLY ASKED QUESTIONS</h2>
       </div>
-
       <div class="faq-list">
         <div class="faq-item open">
           <div class="faq-question">
             <span>How does the 3-Day Free Trial Pass work?</span>
             <span class="faq-icon"></span>
           </div>
-          <div class="faq-answer">
-            Your 3-day trial grants 100% free access to our gym floor, strength equipment, and 1 group class. Simply show your confirmation code on WhatsApp at our reception in Baner!
-          </div>
+          <div class="faq-answer">Your 3-day trial grants 100% free access to our gym floor, strength equipment, and 1 group class. Simply show your confirmation code on WhatsApp at our reception in Baner!</div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
             <span>Can I freeze or pause my membership if I travel?</span>
             <span class="faq-icon"></span>
           </div>
-          <div class="faq-answer">
-            Yes! Annual VIP members can freeze their membership for up to 45 days. Quarterly members can freeze for up to 14 days with zero penalty.
-          </div>
+          <div class="faq-answer">Yes! Annual VIP members can freeze their membership for up to 45 days. Quarterly members can freeze for up to 14 days with zero penalty.</div>
         </div>
-
         <div class="faq-item">
           <div class="faq-question">
             <span>Are there dedicated Women-Only batches at PowerZone?</span>
             <span class="faq-icon"></span>
           </div>
-          <div class="faq-answer">
-            Yes! We run exclusive Ladies Batches Mon-Sat from 11:00 AM to 12:00 PM and 4:00 PM to 5:00 PM with female ACE certified coach Priya Kulkarni.
+          <div class="faq-answer">Yes! We run exclusive Ladies Batches Mon-Sat from 11:00 AM to 12:00 PM and 4:00 PM to 5:00 PM with female ACE certified coach Priya Kulkarni.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What are the gym timings?</span>
+            <span class="faq-icon"></span>
           </div>
+          <div class="faq-answer">Monday to Saturday: 6:00 AM – 10:00 PM. Sunday: 7:00 AM – 1:00 PM. Group classes follow the weekly timetable shown above.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">
@@ -481,11 +523,13 @@
           <li><a href="#programs">Training Programs</a></li>
           <li><a href="#amenities">Amenities</a></li>
           <li><a href="#calculator">BMI Calculator</a></li>
+          <li><a href="#instagram">Instagram Feed</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Direct Contact</h4>
-        <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner" target="_blank" class="btn btn-whatsapp btn-sm">💬 WhatsApp Us Now</a>
+        <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">💬 WhatsApp Us Now</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-top:10px;display:inline-flex">📸 Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -493,25 +537,23 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Chat Bubble -->
-  <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner,%20I%20want%20to%20book%20a%203-Day%20Free%20Trial%20Pass" target="_blank" class="floating-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">
-    💬
-  </a>
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/918329931123?text=Hi%20PowerZone%20Baner,%20I%20want%20to%20book%20a%203-Day%20Free%20Trial%20Pass" target="_blank" rel="noopener" class="floating-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">💬</a>
 
   <!-- Booking Modal -->
   <div class="modal" id="bookingModal">
     <div class="modal-content">
-      <span class="modal-close" id="modalClose">&times;</span>
+      <span class="modal-close" id="modalClose" role="button" aria-label="Close">&times;</span>
       <h2>⚡ Claim 3-Day Free Trial Pass</h2>
       <p>Enter your details below to get instant WhatsApp pass code & location pin.</p>
       <form id="bookingForm">
         <div class="form-group">
           <label for="memberName">Full Name</label>
-          <input type="text" id="memberName" required placeholder="e.g. Rahul Sharma">
+          <input type="text" id="memberName" required placeholder="e.g. Rahul Sharma" autocomplete="name">
         </div>
         <div class="form-group">
           <label for="memberPhone">WhatsApp Mobile Number</label>
-          <input type="tel" id="memberPhone" required placeholder="e.g. 9823012345">
+          <input type="tel" id="memberPhone" required placeholder="e.g. 9823012345" pattern="[0-9]{10}" autocomplete="tel">
         </div>
         <div class="form-group">
           <label for="memberLocality">Your Area / Locality</label>
@@ -531,14 +573,14 @@
   <!-- Referral Modal -->
   <div class="modal" id="referralModal">
     <div class="modal-content">
-      <span class="modal-close" id="refModalClose">&times;</span>
+      <span class="modal-close" id="refModalClose" role="button" aria-label="Close">&times;</span>
       <h2>🎁 Refer a Friend & Win 1 Month Free</h2>
       <p>Give your friends 10% off their membership & get 1 Month FREE for every referral!</p>
       <div class="referral-box">
         <p>YOUR REFERRAL CODE:</p>
         <div class="code-display" id="refCodeDisplay">POWER-VIP-BANER</div>
       </div>
-      <button class="btn btn-whatsapp btn-block" id="btnShareReferral">Share Invite Code on WhatsApp</button>
+      <button type="button" class="btn btn-whatsapp btn-block" id="btnShareReferral">Share Invite Code on WhatsApp</button>
     </div>
   </div>
 
