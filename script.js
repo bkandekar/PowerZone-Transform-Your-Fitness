@@ -85,12 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (h > 0 && w > 0) {
         const bmi = (w / (h * h)).toFixed(1);
+        const bmiNum = parseFloat(bmi);
         bmiValue.innerText = bmi;
 
         let statusText = "Normal Weight";
-        if (bmi < 18.5) statusText = "Underweight";
-        else if (bmi >= 25 && bmi < 29.9) statusText = "Overweight";
-        else if (bmi >= 30) statusText = "Obese Range";
+        if (bmiNum < 18.5) statusText = "Underweight";
+        else if (bmiNum >= 25 && bmiNum < 29.9) statusText = "Overweight";
+        else if (bmiNum >= 30) statusText = "Obese Range";
 
         bmiStatus.innerText = statusText;
 
